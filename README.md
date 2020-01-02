@@ -53,9 +53,10 @@ heroku 可以通过关联 GitHub 账号，直接部署 GitHub 账号下的项目
         下载nodejs并安装。[下载页面](http://nodejs.cn/download/)
 
     * Mac:
-        打开Terminal (command + space, 输入terminal)
-        安装brew: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-        安装nodejs: `brew install node`
+
+        打开Terminal (command + space, 输入terminal)  
+        安装brew: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`  
+        安装nodejs: `brew install node`  
 
 2. [下载](https://github.com/ovsoil/shadowsocks-for-heroku/archive/master.zip) 本项目，并解压到一个指定目录。
 建议解压到用户目录下(Mac也是类似的解压到与`下载`等目录同级的位置)，如下图所示：
@@ -65,19 +66,22 @@ heroku 可以通过关联 GitHub 账号，直接部署 GitHub 账号下的项目
     * Windows:
         通过开始菜单打开Node.js command prompt (Nodejs安装完成之后，点击Windows徽标键打开开始菜单，输入node，一般第一个搜索匹配项就是)  
         进入解压目录：`cd shadowsocks-for-heroku-master` (如果是在按照上面的说明解压到用户目录)  
-        执行`npm install`, 安装依赖的库
+        执行`npm install`, 安装依赖的库  
+        安装完成之后不要关闭命令行窗口，后面还会用到  
     * Mac:
         打开Terminal (command + space, 输入terminal)  
         `cd shadowsocks-for-heroku-master`  
         `npm install`
+        安装完成之后不要关闭Terminal，后面还会用到  
 
 4. 输入以下命令启动本地代理
 
     ```bash
        node local.js -s App名称.herokuapp.com -l 1080 -m 加密算法 -k 密码 -r 80`
     ```
-   为了更方便启动，可以把`start_proxy.bat`(Windows)或者`start_proxy.sh`(Mac)里面的命令根据你的信息修改一下，以后就可以通过`./start_proxy.bat`或者`./start_proxy.sh`命令启动本地代理了。
-    * 如果是试用我预先部署好的SS服务，可以直接执行已有的`start_proxy`脚本。
+    * 如果是试用我预先部署好的SS服务，可以直接执行已有的`start_proxy`脚本，不用做下面的修改。
+
+   为了更方便启动，可以把`start_proxy.bat`(Windows)或者`start_proxy.sh`(Mac)里面的命令根据你的信息修改一下，以后就可以通过`start_proxy.bat`或者`./start_proxy.sh`命令启动本地代理了。
 
 **全部配置完成之后，每次开机只要执行以上3，4两步，就可以打开Chrome上Google了。**
 
@@ -92,4 +96,5 @@ heroku 可以通过关联 GitHub 账号，直接部署 GitHub 账号下的项目
 4. 配置自动切换代理: 在Rule List URL 输入 https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
     ![](https://github.com/ovsoil/shadowsocks-for-heroku/blob/master/img/auto-switch.png)
 5. Let's Go 👻。
+    选择auto switch之后，就会自动根据过滤列表选择是否使用代理访问网页了。
     ![](https://github.com/ovsoil/shadowsocks-for-heroku/blob/master/img/google.png)
